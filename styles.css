@@ -1,0 +1,190 @@
+@import url(reset.css);
+a {
+  color: green;
+  text-decoration: none;
+}
+body {
+  width: 100%;
+  font-size: 62.5%;
+  border: 1px solid lightgreen;
+}
+@media screen and (min-width: 1200px) {
+  body {
+    margin: 0 auto;
+    width: 1200px;
+  }
+}
+.daytime {
+  font-size: 0.7em;
+}
+dd {
+  font-size: 1.4em;
+  line-height: 1.42857143em;
+}
+dt {
+  font-size: 1.4em;
+  line-height: 1.42857143em;
+  font-weight: bold;
+}
+footer {
+  margin: 20px;
+  border-top: 1px solid green;
+  padding: 20px 0 0;
+}
+footer p {
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  footer {
+    width: 600px;
+    margin: 0 auto;
+  }
+}
+.grid-categories {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+.grid-categories li {
+  text-align: center;
+  width: 50%;
+  box-sizing: border-box;
+  padding: 20px;
+}
+@media screen and (min-width: 768px) {
+  .grid-categories li {
+    width: 33%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .grid-categories li {
+    width: 20%;
+  }
+}
+.grid-categories li img {
+  display: block;
+  margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+  .grid-home {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 40px;
+    grid-template-areas: "banner banner hrs" "banner banner about" "menu   orders about";
+  }
+}
+.grid-home .about {
+  grid-area: about;
+}
+.grid-home .banner {
+  grid-area: banner;
+}
+.grid-home .hrs {
+  grid-area: hrs;
+}
+.grid-home .menu {
+  grid-area: menu;
+}
+.grid-home .orders {
+  grid-area: orders;
+}
+.grid-info {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+}
+.grid-order-form li,
+.grid-order-form .grid-item {
+  display: grid;
+  grid-template-columns: 4fr 3fr 3fr 2fr;
+}
+.grid-order-form li.input,
+.grid-order-form .grid-item.input {
+  grid-template-areas: "label input input .";
+}
+.grid-order-form li.input label,
+.grid-order-form .grid-item.input label {
+  grid-area: label;
+}
+.grid-order-form li.input input,
+.grid-order-form .grid-item.input input {
+  grid-area: input;
+}
+.grid-order-form li.radios,
+.grid-order-form .grid-item.radios {
+  grid-template-areas: "label r1 r2 .";
+}
+.grid-order-form li.radios .label,
+.grid-order-form .grid-item.radios .label {
+  grid-area: label;
+}
+.grid-order-form li.radios label:nth-of-type(1),
+.grid-order-form .grid-item.radios label:nth-of-type(1) {
+  grid-area: r1;
+}
+.grid-order-form li.radios label:nth-of-type(2),
+.grid-order-form .grid-item.radios label:nth-of-type(2) {
+  grid-area: r2;
+}
+.grid-order-form li.textarea,
+.grid-order-form .grid-item.textarea {
+  grid-template-areas: "label textarea textarea textarea";
+}
+.grid-order-form li.textarea label,
+.grid-order-form .grid-item.textarea label {
+  grid-area: label;
+}
+.grid-order-form li.textarea textarea,
+.grid-order-form .grid-item.textarea textarea {
+  grid-area: textarea;
+}
+h1 {
+  font-size: 3.6em;
+  text-align: center;
+}
+h1 img {
+  max-width: 80%;
+}
+h2 {
+  border-bottom: 1px solid green;
+  color: brown;
+  font-size: 2.4em;
+  font-weight: bold;
+  margin: 20px 0 5px;
+}
+h2 a {
+  color: brown;
+}
+img {
+  max-width: 100%;
+}
+li {
+  font-size: 1.4em;
+  line-height: 1.42857143em;
+}
+main {
+  box-sizing: border-box;
+  padding: 20px;
+}
+nav a {
+  display: block;
+  padding: 10px 20px;
+}
+nav a:hover {
+  border-bottom: 1px solid green;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+}
+nav li {
+  text-align: center;
+}
+p {
+  font-size: 1.4em;
+  line-height: 1.42857143em;
+  margin: 5px 0 20px;
+}
+.page-order {
+  width: 550px;
+  margin: 0 auto;
+}
