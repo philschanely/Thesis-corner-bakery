@@ -1,183 +1,327 @@
+// Imports
 @import url(reset.css);
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700|Teko:500,600');
 
+// Mixins
 .body-copy() {
-    font-size:1.4em;
-    line-height: 2/1.4em;
+    font-size:1.6em;
+    line-height: 2.5/1.6em;
+    font-weight:300;
 }
-
-a {
-    color:green;
-    text-decoration: none;
+.btn(@width) {
+    display: block;
+    background-color: @color-aqua;
+    margin:0 auto;
+    box-sizing: border-box;
+    padding:15px 25px;
+    width:@width;
+    .font-open-sans;
+    font-size:1.6em;
+    font-weight:400;
+    text-align: center;
+    color:white;
+    border:none;
+    outline:none;
 }
-
-body {
-    width:100%;
-    font-size:62.5%;
-    @media screen and (min-width:1200px) {
-        margin:0 auto;
-        width:1200px;
-    }
-    border:1px solid lightgreen;
-}
-
-.daytime { font-size:0.7em; }
-
-dd {
-    .body-copy;
-}
-
-dt {
-    .body-copy;
-    font-weight:bold;
-}
-
-footer { 
-    margin:20px;
-    border-top:1px solid green;
-    padding:20px 0 0;
-    p { text-align:center; }
-    @media screen and (min-width:768px) {
-        width:600px;
-        margin:0 auto; 
-    }
-}
-
-.grid-categories {
-    display:flex;
-    justify-content:center; 
-    flex-flow: row wrap;
+.font-teko() { font-family: "Teko", sans-serif; }
+.font-open-sans() { font-family: "Open Sans", sans-serif; }
+.thumbs(@font-size:2.3em, @font-weight:700) {
     li {
         text-align:center;
-        width:50%;
-        box-sizing: border-box;
-        padding:20px;
-        @media screen and (min-width:768px) {
-            width:33%;
-        }
-        @media screen and (min-width:1200px) {
-            width:20%;
-        }
+        font-size:1em;
         img { 
             display:block; 
             margin:0 auto;
         }
+        b {
+            display: block;
+            .font-teko;
+            font-size:@font-size;
+            font-weight:@font-weight;
+            color:@color-aqua;
+            margin-bottom:8px;
+            text-transform: lowercase;
+        }
     }
 }
+
+// Variables
+@color-aqua: #64A4A2;
+@color-green: #5C7C4B;
+@color-grey: #4A4A4A;
+@color-orange: #C2762E;
+
+
+// Phase 3a
+
+a {
+    color:@color-aqua;
+    font-weight:400;
+    text-decoration: none;
+}
+
+.allergies {
+    text-align: center;
+    strong { display: block; }
+}
+
+body {
+    .font-open-sans;
+    font-size:62.5%;
+    color:@color-grey;
+}
+
+.categories { .thumbs(); }
+
+dd {
+    .body-copy;
+    margin-bottom:12px;
+}
+
+dt {
+    .body-copy;
+    margin-bottom:12px;
+}
+
+footer { 
+    margin:25px;
+    border-top:2px solid @color-green;
+    padding:20px 0 0;
+    p { text-align:center; }
+}
+
+.grid-item {
+    font-size:1em; 
+    input { .btn(250px); }
+}
+
+h1 { text-align:center; }
+
+h2 {
+    .font-teko;
+    font-size:4.3em;
+    font-weight:500;
+    text-align: center;
+    color:@color-green;
+    text-transform: lowercase;
+    border-bottom:2px solid @color-green;
+    margin:25px 0;
+    padding-bottom:13px;
+    a { color:@color-green; }
+}
+
+header { padding:65px 25px 10px; }
+
+img { max-width:100%; }
+
+input[type="date"],
+input[type="email"], 
+input[type="tel"],
+input[type="text"],
+textarea {
+    padding:5px;
+    font-size:1em;
+    .font-open-sans;
+    font-weight:300;
+    color:@color-grey;
+    border:1px solid @color-grey;
+}
+
+label, .label {
+    margin-top:7px;
+    margin-bottom:5px;
+    display: block;
+}    
+
+li { .body-copy; }
+
+main {
+    box-sizing: border-box;
+    padding:25px;
+}
+
+nav {
+    a { 
+        color: @color-grey; 
+        font-weight:300;
+    }
+    li { 
+        text-align:center; 
+        font-size:2.3em;
+        border-top:3px solid transparent;
+        &.active {
+            border-color:@color-orange;
+            a { 
+                color:@color-orange;
+                font-weight:700;
+            }
+        }
+    }
+}
+
+.order {
+    font-size:1em;
+    a { .btn(250px); }
+}
+
+p { 
+    .body-copy;
+    margin-bottom:25px;
+}
+
+.products { .thumbs(1.9em, 500); }
+
+strong {
+    font-style: italic;
+    font-weight:600;
+    color:@color-orange;
+}
+
+
+// Phase 3b
+
+body {
+    width:100%;
+    @media screen and (min-width:1200px) {
+        margin:0 auto;
+        width:1200px;
+    }
+}
+
+nav {
+    li { margin:0 33px; }
+    ul { 
+        display:flex;
+        justify-content:center; 
+    }
+    a { 
+        display:block; 
+        padding:2px 5px;
+    }
+}
+
+footer { 
+    @media screen and (min-width:600px) {
+        width:550px;
+        margin:0 auto; 
+    }
+}
+
 .grid-home {
-    @media screen and (min-width:768px) {
+    @media screen and (min-width:760px) {
         display:grid;
         grid-template-columns:1fr 1fr 1fr;
-        grid-gap:40px;
+        grid-gap:50px;
         grid-template-areas:
             "banner banner hrs"
             "banner banner about"
             "menu   orders about";
     }
-    .about { 
-        grid-area: about; 
-    }
-    .banner { 
-        grid-area: banner; 
-    }
-    .hrs { 
-        grid-area: hrs; 
-    }
-    .menu { 
-        grid-area: menu;
-    }
-    .orders { 
-        grid-area: orders; 
-    }
+    .about { grid-area: about; }
+    .banner { grid-area: banner; }
+    .hrs { grid-area: hrs; }
+    .menu { grid-area: menu; }
+    .orders { grid-area: orders; }
 }
+
 .grid-info {
     display:grid;
     grid-template-columns:2fr 3fr;
 }
+
+.categories {
+    display:flex;
+    justify-content:center; 
+    flex-flow: row wrap;
+    li {
+        width:50%;
+        box-sizing: border-box;
+        padding:20px;
+        @media screen and (min-width:760px) {
+            width:33%;
+        }
+    }
+}
+
+.intro {
+    @media screen and (min-width:600px) {
+        width:550px;
+        margin:0 auto;
+    }
+}
+
+.products {
+    display:flex;
+    justify-content:center; 
+    flex-flow: row wrap;
+    li {
+        width:50%;
+        box-sizing: border-box;
+        padding:20px;
+        @media screen and (min-width:600px) {
+            width:33%;
+        }
+        @media screen and (min-width:800px) {
+            width:25%;
+        }
+        @media screen and (min-width:1000px) {
+            width:20%;
+        }
+    }
+}
+
 .grid-order-form {
     li, .grid-item {
         display:grid;
-        grid-template-columns:4fr 3fr 3fr 2fr;
-        &.input {
+        grid-template-columns:1fr 1fr;
+        margin-bottom:12px; 
+        &.input, &.textarea {
             grid-template-areas:
-                "label input input .";
-            label {
-                grid-area: label;
-            }
-            input {
-                grid-area: input;
-            }
+                "label label"
+                "field field";  
+            label { grid-area: label; }
+            input, textarea { grid-area: field; }
         }
         &.radios {
             grid-template-areas:
-                "label r1 r2 .";
-            .label {
-                grid-area: label; 
+                "label label"
+                "r1 r2"; 
+            .label { grid-area: label; }
+            label:nth-of-type(1) { grid-area: r1; }
+            label:nth-of-type(2) { grid-area: r2; } 
+        }
+        input[type="submit"] { margin-left:0; }
+    }
+    @media screen and (min-width:600px) {
+        width:600px;
+        margin:0 auto;
+        label, .label {
+            margin-top:7px;
+            margin-right:50px;
+            text-align:right;
+        }
+        li, .grid-item {
+            margin-bottom:25px;
+            grid-template-columns:4fr 3fr 3fr 2fr;
+            &.input {
+                grid-template-areas:
+                    "label field field .";
             }
-            label:nth-of-type(1) { 
-                grid-area: r1; 
+            &.radios {
+                grid-template-areas:
+                    "label r1 r2 .";
             }
-            label:nth-of-type(2) { 
-                grid-area: r2; 
+            &.textarea {
+                grid-template-areas:
+                    "label field field field";
             }
         }
-        &.textarea {
-            grid-template-areas:
-                "label textarea textarea textarea";
-            label {
-                grid-area: label;
-            }
-            textarea {
-                grid-area: textarea;
-            }
-        }
-    }
+    }   
 }
 
-h1 {
-    font-size:3.6em;
-    text-align:center;
-    img { max-width:80%; }
-}
-
-h2 {
-    border-bottom:1px solid green;
-    color:brown;
-    font-size:2.4em;
-    font-weight:bold;
-    margin:20px 0 5px;
-    a { color:brown; }
-}
-
-img { max-width:100%; }
-
-li { 
-    .body-copy; 
-}
-
-main {
-    box-sizing: border-box;
-    padding:20px;
-}
-
-nav {
-    a { 
-        display:block; 
-        padding:10px 20px;
-        &:hover { border-bottom:1px solid green; }
-    }
-    ul { 
-        display:flex;
-        justify-content:center; 
-    }
-    li { text-align:center; }
-}
-
-p { 
-    .body-copy;
-    margin:5px 0 20px;
-}
-
-.page-order {
-    width:550px;
-    margin:0 auto;
-}
+//// Phase 3c
+.allergies { margin-top:50px; }
+.hrs { margin-top:25px; }
+nav { margin-top:-6px; }
+.order { margin-top:50px; }
+.page-home h2 { margin-top:0; }
