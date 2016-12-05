@@ -61,6 +61,7 @@ a {
 }
 
 .allergies {
+    margin-top:50px;
     text-align: center;
     strong { display: block; }
 }
@@ -69,9 +70,27 @@ body {
     .font-open-sans;
     font-size:62.5%;
     color:@color-grey;
+    width:100%;
+    @media screen and (min-width:1200px) {
+        margin:0 auto;
+        width:1200px;
+    }
 }
 
-.categories { .thumbs(); }
+.categories { 
+    .thumbs();
+    display:flex;
+    justify-content:center; 
+    flex-flow: row wrap;
+    li {
+        width:50%;
+        box-sizing: border-box;
+        padding:20px;
+        @media screen and (min-width:760px) {
+            width:33%;
+        }
+    }
+}
 
 dd {
     .body-copy;
@@ -88,119 +107,6 @@ footer {
     border-top:2px solid @color-green;
     padding:20px 0 0;
     p { text-align:center; }
-}
-
-.grid-item {
-    font-size:1em; 
-    input { .btn(250px); }
-}
-
-h1 { text-align:center; }
-
-h2 {
-    .font-teko;
-    font-size:4.3em;
-    font-weight:500;
-    text-align: center;
-    color:@color-green;
-    text-transform: lowercase;
-    border-bottom:2px solid @color-green;
-    margin:25px 0;
-    padding-bottom:13px;
-    a { color:@color-green; }
-}
-
-header { padding:65px 25px 10px; }
-
-img { max-width:100%; }
-
-input[type="date"],
-input[type="email"], 
-input[type="tel"],
-input[type="text"],
-textarea {
-    padding:5px;
-    font-size:1em;
-    .font-open-sans;
-    font-weight:300;
-    color:@color-grey;
-    border:1px solid @color-grey;
-}
-
-label, .label {
-    margin-top:7px;
-    margin-bottom:5px;
-    display: block;
-}    
-
-li { .body-copy; }
-
-main {
-    box-sizing: border-box;
-    padding:25px;
-}
-
-nav {
-    a { 
-        color: @color-grey; 
-        font-weight:300;
-    }
-    li { 
-        text-align:center; 
-        font-size:2.3em;
-        border-top:3px solid transparent;
-        &.active {
-            border-color:@color-orange;
-            a { 
-                color:@color-orange;
-                font-weight:700;
-            }
-        }
-    }
-}
-
-.order {
-    font-size:1em;
-    a { .btn(250px); }
-}
-
-p { 
-    .body-copy;
-    margin-bottom:25px;
-}
-
-.products { .thumbs(1.9em, 500); }
-
-strong {
-    font-style: italic;
-    font-weight:600;
-    color:@color-orange;
-}
-
-
-// Phase 3b
-
-body {
-    width:100%;
-    @media screen and (min-width:1200px) {
-        margin:0 auto;
-        width:1200px;
-    }
-}
-
-nav {
-    li { margin:0 33px; }
-    ul { 
-        display:flex;
-        justify-content:center; 
-    }
-    a { 
-        display:block; 
-        padding:2px 5px;
-    }
-}
-
-footer { 
     @media screen and (min-width:600px) {
         width:550px;
         margin:0 auto; 
@@ -229,45 +135,9 @@ footer {
     grid-template-columns:2fr 3fr;
 }
 
-.categories {
-    display:flex;
-    justify-content:center; 
-    flex-flow: row wrap;
-    li {
-        width:50%;
-        box-sizing: border-box;
-        padding:20px;
-        @media screen and (min-width:760px) {
-            width:33%;
-        }
-    }
-}
-
-.intro {
-    @media screen and (min-width:600px) {
-        width:550px;
-        margin:0 auto;
-    }
-}
-
-.products {
-    display:flex;
-    justify-content:center; 
-    flex-flow: row wrap;
-    li {
-        width:50%;
-        box-sizing: border-box;
-        padding:20px;
-        @media screen and (min-width:600px) {
-            width:33%;
-        }
-        @media screen and (min-width:800px) {
-            width:25%;
-        }
-        @media screen and (min-width:1000px) {
-            width:20%;
-        }
-    }
+.grid-item {
+    font-size:1em; 
+    input { .btn(250px); }
 }
 
 .grid-order-form {
@@ -319,9 +189,123 @@ footer {
     }   
 }
 
-//// Phase 3c
-.allergies { margin-top:50px; }
+h1 { text-align:center; }
+
+h2 {
+    .font-teko;
+    font-size:4.3em;
+    font-weight:500;
+    text-align: center;
+    color:@color-green;
+    text-transform: lowercase;
+    border-bottom:2px solid @color-green;
+    margin:25px 0;
+    padding-bottom:13px;
+    a { color:@color-green; }
+}
+
+header { padding:65px 25px 10px; }
+
 .hrs { margin-top:25px; }
-nav { margin-top:-6px; }
-.order { margin-top:50px; }
+
+img { max-width:100%; }
+
+.intro {
+    @media screen and (min-width:600px) {
+        width:550px;
+        margin:0 auto;
+    }
+}
+
+input[type="date"],
+input[type="email"], 
+input[type="tel"],
+input[type="text"],
+textarea {
+    padding:5px;
+    font-size:1em;
+    .font-open-sans;
+    font-weight:300;
+    color:@color-grey;
+    border:1px solid @color-grey;
+}
+
+label, .label {
+    margin-top:7px;
+    margin-bottom:5px;
+    display: block;
+}    
+
+li { .body-copy; }
+
+main {
+    box-sizing: border-box;
+    padding:25px;
+}
+
+nav {
+    margin-top:-6px;
+    a { 
+        color: @color-grey; 
+        font-weight:300;
+        display:block; 
+        padding:2px 5px;
+    }
+    li { 
+        margin:0 33px;
+        text-align:center; 
+        font-size:2.3em;
+        border-top:3px solid transparent;
+        &.active {
+            border-color:@color-orange;
+            a { 
+                color:@color-orange;
+                font-weight:700;
+            }
+        }
+    }
+    ul { 
+        display:flex;
+        justify-content:center; 
+    }
+}
+
+.order {
+    font-size:1em;
+    margin-top:50px;
+    a { .btn(250px); }
+}
+
+p { 
+    .body-copy;
+    margin-bottom:25px;
+}
+
 .page-home h2 { margin-top:0; }
+
+.products { 
+    .thumbs(1.9em, 500);
+    display:flex;
+    justify-content:center; 
+    flex-flow: row wrap;
+    li {
+        width:50%;
+        box-sizing: border-box;
+        padding:20px;
+        @media screen and (min-width:600px) {
+            width:33%;
+        }
+        @media screen and (min-width:800px) {
+            width:25%;
+        }
+        @media screen and (min-width:1000px) {
+            width:20%;
+        }
+    }
+}
+
+strong {
+    font-style: italic;
+    font-weight:600;
+    color:@color-orange;
+}
