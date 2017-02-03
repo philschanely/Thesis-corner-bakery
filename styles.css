@@ -62,7 +62,7 @@ body.grid-home .menu {
 body.grid-home .orders {
   grid-area: orders;
 }
-@media screen and (min-width: 760px) {
+@media screen and (min-width: 600px) {
   body.grid-menu {
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -71,13 +71,21 @@ body.grid-home .orders {
     grid-column-start: 1;
     grid-column-end: 4;
   }
+  body.grid-menu .full-item {
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 800px) {
   body.grid-menu {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
   body.grid-menu header,
   body.grid-menu footer {
+    grid-column-start: 1;
+    grid-column-end: 5;
+  }
+  body.grid-menu .full-item {
     grid-column-start: 1;
     grid-column-end: 5;
   }
@@ -87,22 +95,10 @@ body.grid-menu .full-item {
   width: 100%;
   padding: 0 20px;
 }
-@media screen and (min-width: 760px) {
-  body.grid-menu .full-item {
-    grid-column-start: 1;
-    grid-column-end: 4;
-  }
-}
 @media screen and (min-width: 800px) {
   body.grid-menu .full-item {
     width: 50%;
     margin: 0 auto;
-  }
-}
-@media screen and (min-width: 1200px) {
-  body.grid-menu .full-item {
-    grid-column-start: 1;
-    grid-column-end: 5;
   }
 }
 button {

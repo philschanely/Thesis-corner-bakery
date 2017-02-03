@@ -89,17 +89,25 @@ body {
         .orders { grid-area: orders; }
     }
     &.grid-menu {
-        @media screen and (min-width:760px) {
+        @media screen and (min-width:600px) {
             grid-template-columns: 1fr 1fr 1fr;
             header, footer {
                 grid-column-start: 1;
                 grid-column-end: 4;
             }
+            .full-item {
+                grid-column-start: 1;
+                grid-column-end: 4;
+            }
         }
 
-        @media screen and (min-width:1200px) {
+        @media screen and (min-width:800px) {
             grid-template-columns: 1fr 1fr 1fr 1fr;
             header, footer {
+                grid-column-start: 1;
+                grid-column-end: 5;
+            }
+            .full-item {
                 grid-column-start: 1;
                 grid-column-end: 5;
             }
@@ -109,17 +117,9 @@ body {
             box-sizing:border-box;
             width:100%;
             padding:0 20px;
-            @media screen and (min-width:760px) {
-                grid-column-start: 1;
-                grid-column-end: 4;
-            }
             @media screen and (min-width:800px) {
                 width:50%;
                 margin:0 auto;
-            }
-            @media screen and (min-width:1200px) {
-                grid-column-start: 1;
-                grid-column-end: 5;
             }
         }
     }
